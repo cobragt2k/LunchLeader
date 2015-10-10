@@ -28,6 +28,8 @@ TODO: test links
 <template name="leaderboard">
   <h1>Leaderboard</h1>
   <ul>
-    <li>Restaurant Name</li>
+    {{#each data}}
+      <li>restaurant: {{restaurant}}...votes: {{votes}} <button>vote</button></li>
+    {{/each}}
   </ul>
 </template>
