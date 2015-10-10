@@ -1,18 +1,10 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
+  Template.leaderboard.helpers({
+    data: [
+      {restaurant: "Osha Thai", votes: 1},
+      {restaurant: "Super Duper", votes: 2},
+      {restaurant: "Murrachi's", votes: 3}
+    ]
   });
 }
 
@@ -21,3 +13,6 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+
+
