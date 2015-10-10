@@ -1,11 +1,11 @@
 <template name="chooseRestaurant">
   {{#page title="Choose Restaurant"}}
     <div class="ui input">
-      <input class="" type="text" placeholder="Restaurant Name">
+      <input class="" id="restaurant-input" type="text" placeholder="Restaurant Name">
     </div>
-    <div class="ui input">
+    <!-- <div class="ui input">
       <input type="text" placeholder="Cuisine">
-    </div>
+    </div> -->
 
     <table class="ui selectable table">
       <tbody>
@@ -15,6 +15,6 @@
       </tbody>
     </table>
 
-    <button class="ui massive button">Add Restaurant</button>
+    <button class="ui massive button" id="add-restaurant-button">Add Restaurant</button>
   {{/page}}
 </template>
