@@ -1,5 +1,5 @@
 if (Meteor.isClient) {
-  Template.leaderboard.helpers({
+  Template.chooseRestaurant.helpers({
     data: [
       {restaurant: "Osha Thai", votes: 1},
       {restaurant: "Super Duper", votes: 2},
@@ -7,12 +7,3 @@ if (Meteor.isClient) {
     ]
   });
 }
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
-
-
-

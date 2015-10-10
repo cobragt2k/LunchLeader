@@ -1,0 +1,9 @@
+<template name="leaderboard">
+  {{#page title="Leaderboard"}}
+    <ul>
+      {{#each data}}
+        <li>restaurant: {{restaurant}}...votes: {{votes}} <button>vote</button></li>
+      {{/each}}
+    </ul>
+  {{/page}}
+</template>
