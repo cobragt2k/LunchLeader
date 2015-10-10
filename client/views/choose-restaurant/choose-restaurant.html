@@ -1,0 +1,20 @@
+<template name="chooseRestaurant">
+  {{#page title="Choose Restaurant"}}
+    <div class="ui input">
+      <input class="" type="text" placeholder="Restaurant Name">
+    </div>
+    <div class="ui input">
+      <input type="text" placeholder="Cuisine">
+    </div>
+
+    <table class="ui selectable table">
+      <tbody>
+        {{#each data}}
+          <tr><td>restaurant: {{restaurant}}</td></tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <button class="ui massive button">Add Restaurant</button>
+  {{/page}}
+</template>

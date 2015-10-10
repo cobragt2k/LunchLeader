@@ -56,7 +56,7 @@
     "basic": false,
     "bookish": false,
     "bootstrap3": false,
-    "chubby": false,
+    "chubby": true,
     "classic": false,
     "colored": false,
     "default": true,
