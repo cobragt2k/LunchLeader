@@ -4,10 +4,13 @@ Router.route('/',function() {
   this.render('login');
 });
 
-Router.route('/choose-restaurant',function() {
-  this.render('chooseRestaurant');
+Router.route('/meal/:mealSessionId/choose-restaurant',function() {
+  var meal = MealSessions.findOne(this.params.mealSessionId);
+  this.render('chooseRestaurant', {data: meal});
 });
 
-Router.route('/leaderboard',function() {
+Router.route('/meal/:mealSessionId/leaderboard',function() {
+  // var meal = MealSession.findOne(this.params.mealSessionId);
+  Session.set("currentMealSessionId", this.params.mealSessionId);
   this.render('leaderboard');
 });
