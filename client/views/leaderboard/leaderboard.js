@@ -6,7 +6,10 @@ Template.leaderboard.helpers({
       return Restaurants.findOne(id);
     });
     console.log("restaurants", restaurants);
-    return restaurants
+    var ascending = _.sortBy(restaurants, function(restaurant) {
+      return restaurant.votes.length;
+    })
+    return ascending.reverse();
   }
 
 
