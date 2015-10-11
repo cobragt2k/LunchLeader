@@ -9,8 +9,8 @@
 
 <template name="page">
   <div class="ui menu">
-    <a class="item" href="/">Login</a>
     {{#unless isLoginPage}}
+      <a class="item" href="/">Join</a>
       <a class="item" href="./choose-restaurant">Choose Restaurant</a>
       <a class="item" href="./leaderboard">Leaderboard</a>
     {{/unless}}
