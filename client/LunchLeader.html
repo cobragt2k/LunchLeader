@@ -11,11 +11,15 @@
     <a class="item" href="/">Login</a>
     <a class="item" href="./choose-restaurant">Choose Restaurant</a>
     <a class="item" href="./leaderboard">Leaderboard</a>
+    <span class="item">Hi Anonymous, please&nbsp;<a id="register">register</a>.</span>
   </div>
   <div class="ui container">
     <h1>{{this.title}}</h1>
     {{> UI.contentBlock}}
   </div>
+  {{> registerModal}}
 </template>
+
+
 
 

@@ -35,7 +35,7 @@ Template.chooseRestaurant.events({
   "click #add-restaurant-button": function(event, template) {
     restaurantSearch(event, template);
   },
-  "submit form": function(event, template) {
+  "submit #choose-restaurant-form": function(event, template) {
     restaurantSearch(event, template);
   }
 });
