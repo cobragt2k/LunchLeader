@@ -8,6 +8,8 @@ Template.login.events({
       authenticated: false
     });
 
+    Session.set("currentUserId", userId);
+
     // If group is duplicate than join exisiting one
     var groupId = Groups.insert({
       name: group,

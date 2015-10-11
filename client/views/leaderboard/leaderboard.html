@@ -1,9 +1,11 @@
 <template name="leaderboard">
   {{#page title="Leaderboard"}}
-    <ul>
+    <table class="ui selectable table">
+    <tbody>
       {{#each data}}
-        <li>restaurant: {{yelpData.name}}...votes: {{votes}} <button>vote</button></li>
+      	<tr><td id="upvote-btn">{{yelpData.name}}&nbsp;+{{votes.length}}</td></tr>
       {{/each}}
-    </ul>
+    </tbody>
+    </table>
   {{/page}}
 </template>

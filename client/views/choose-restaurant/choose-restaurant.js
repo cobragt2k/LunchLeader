@@ -1,3 +1,4 @@
+
 var restaurantSearch = function(event, template) {
   event.preventDefault();
 
@@ -11,6 +12,24 @@ var restaurantSearch = function(event, template) {
   });
 
 };
+
+Vote = function vote(restaurantId) {
+  var restaurant = Restaurants.findOne(restaurantId);
+  var currentUserId = Session.get("currentUserId"); 
+
+  var userIndex = _.contains(restaurant.votes, currentUserId);
+
+  if(!userIndex) {
+
+    restaurant.votes.push(currentUserId);
+    Restaurants.update(restaurantId, restaurant);
+
+  } else {
+
+    console.log("Not equal -1");
+  }
+
+}
 
 Template.chooseRestaurant.events({
   "click #add-restaurant-button": function(event, template) {
@@ -40,6 +59,8 @@ Template.chooseRestaurant.events({
     meal.restaurantIds.push(restaurantId);
 
     MealSessions.update(mealId, meal);
+
+    Vote(restaurantId);
 
     Session.set('yelpResults', '');
     return Router.go("/meal/" + mealId + "/leaderboard");
