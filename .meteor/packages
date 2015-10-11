@@ -12,3 +12,4 @@ flemay:less-autoprefixer
 semantic:ui
 oauth1
 underscore
+momentjs:moment
