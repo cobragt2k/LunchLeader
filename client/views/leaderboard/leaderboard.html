@@ -1,9 +1,20 @@
 <template name="leaderboard">
-  {{#page title="Leaderboard"}}
-    <table class="ui selectable table">
+  {{#page title="Lunch Leader Board"}}
+    <table class="ui padded selectable table">
     <tbody>
       {{#each data}}
-      	<tr><td id="upvote-btn">{{yelpData.name}}&nbsp;+{{votes.length}}</td></tr>
+      	<tr>
+	      	<td id="upvote-btn">
+	      		<h2 class="ui header">{{yelpData.name}}</h2>
+	      		<div class="sub header">{{yelpData.categories.[0].[0]}}</div>
+	      	</td>
+	      	<td class="right aligned">
+		      	<button class="ui blue labeled big icon button">
+			      <i class="large thumbs up icon"></i>
+			      &nbsp;&nbsp;{{votes.length}}
+			    </button>
+	      	</td>
+      	</tr>
       {{/each}}
     </tbody>
     </table>
