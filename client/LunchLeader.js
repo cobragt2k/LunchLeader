@@ -23,11 +23,14 @@ Template.page.events({
 Template.page.helpers({
   username: function() {
     return Session.get("currentUserId");
-  }
-});
-
-Template.page.helpers({
+  },
   isLoginPage: function() {
     return Router.current().route.getName() === undefined;
+  },
+  isChoosePage: function() {
+    return Router.current().route.getName() === "meal.:mealSessionId.choose-restaurant";
+  },
+  isLeaderboardPage: function() {
+    return Router.current().route.getName() === "meal.:mealSessionId.leaderboard";
   }
 });

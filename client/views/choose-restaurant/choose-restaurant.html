@@ -1,17 +1,19 @@
 <template name="chooseRestaurant">
-  {{#page title="Choose a Restaurant in San Francisco"}}
-    <form class="ui form" id="choose-restaurant-form">
+  {{#page title="Suggest a place in San Francisco"}}
+    <div class="ui form">
       <div class="field ui big input fluid">
-        <input id="restaurant-input" type="text" placeholder="Restaurant Name, Cuisine" maxlength="40">
+        <input id="restaurant-input" type="text" placeholder="Where should we go eat?" maxlength="40">
       </div>
-      <table class="ui padded selectable table">
-        <tbody>
-          {{#each yelpResults}}
-            {{> yelpRestaurant}}
-          {{/each}}
-        </tbody>
-      </table>
-    </form>
+      {{#if yelpResults}}
+        <table class="ui padded selectable table">
+          <tbody>
+            {{#each yelpResults}}
+              {{> yelpRestaurant}}
+            {{/each}}
+          </tbody>
+        </table>
+      {{/if}}
+    </div>
   {{/page}}
 </template>
 

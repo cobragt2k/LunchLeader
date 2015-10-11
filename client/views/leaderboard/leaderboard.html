@@ -1,25 +1,29 @@
 <template name="leaderboard">
   {{#page title="Lunch Leader Board"}}
-    <table class="ui padded selectable table">
-    <tbody>
-      {{#each data}}
-        <tr>
-          <td id="upvote-btn">
-            <h2 class="ui header">{{yelpData.name}}</h2>
-            <div class="sub header">{{yelpData.categories.[0].[0]}}</div>
-          </td>
-          <td class="right aligned">
-            <button class="ui blue labeled big icon button">
-              <i class="large thumbs up icon"></i>
-              &nbsp;&nbsp;{{votes.length}}
-            </button>
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-    </table>
+    {{#if data}}
+      <table class="ui padded selectable table">
+        <tbody>
+          {{#each data}}
+            <tr>
+              <td id="upvote-btn">
+                <h2 class="ui header">{{yelpData.name}}</h2>
+                <div class="sub header">{{yelpData.categories.[0].[0]}}</div>
+              </td>
+              <td class="right aligned">
+                <button class="ui blue labeled big icon button">
+                  <i class="large thumbs up icon"></i>
+                  &nbsp;&nbsp;{{votes.length}}
+                </button>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}}
+      <p>Be the first to suggest a place to eat!</p>
+    {{/if}}
     <div class="field ui">
-    	<a class="button big ui fluid" href="./choose-restaurant">Choose a Restaurant</a>
+    	<a class="button big ui fluid" href="./choose-restaurant">Suggest a place</a>
     </div>
   {{/page}}
 </template>

@@ -1,3 +1,5 @@
+var keyPressCount = 0;
+
 var getYelpSearchText = function() {
   return $("#restaurant-input").val();
 }
@@ -6,6 +8,7 @@ var restaurantSearch = function(event, template) {
   event.preventDefault();
 
   Meteor.call('getYelpSearchResults', getYelpSearchText(), function(err, response){
+    console.log(response);
     Session.set('yelpResults', response);
     console.log(err);
   });
@@ -26,11 +29,16 @@ Vote = function vote(restaurantId) {
 }
 
 Template.chooseRestaurant.events({
-  "click #add-restaurant-button": function(event, template) {
-    restaurantSearch(event, template);
-  },
   "input #restaurant-input": function(event, template) {
-    restaurantSearch(event, template);
+    keyPressCount++;
+    if(keyPressCount > 2 && getYelpSearchText().length !== 0) {
+      restaurantSearch(event, template);
+    } else {
+      Session.set('yelpResults', undefined);
+    }
+  },
+  "input #choose-restaurant-form": function(event) {
+    event.preventDefault();
   }
 });
 

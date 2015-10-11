@@ -1,20 +1,26 @@
 <template name="login">
-  {{#page title="Join us for lunch!"}}
+  {{#page title="Be the Lunch Leader!"}}
   <form id="login-form" class="ui form">
-    <div class="field">
-        <div class="ui big input left icon">
-          <input type="text" id="group-input" placeholder="Group Name" maxlength="40">
-          <i class="users icon"></i>
-        </div>
+    <div class="field" id="group-error" style="display:none;">
+      <p class="red">Your group name is not long enough.</p>
     </div>
     <div class="field">
-        <div class="ui big input left icon">
-          <input type="text" id="username-input" placeholder="Your Name" value="{{username}}"  maxlength="40">
-          <i class="user icon"></i>
-        </div>
+      <div class="ui big input left icon">
+        <input type="text" id="group-input" placeholder="Your group name" maxlength="40">
+        <i class="users icon"></i>
+      </div>
+    </div>
+    <div class="field hide" id="name-error" style="display:none;">
+      <p class="red">Your name is not long enough.</p>
     </div>
     <div class="field">
-      <button type="submit" class="fluid ui big button" id="join-button">Join Now</button>
+      <div class="ui big input left icon">
+        <input type="text" id="username-input" placeholder="Your name" value="{{username}}"  maxlength="40">
+        <i class="user icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <button type="submit" class="fluid ui big button" id="join-button">Join now</button>
     </div>
   </form>
   {{/page}}

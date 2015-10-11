@@ -4,21 +4,22 @@
   <title>Lunch Leader</title>
 </head>
 
-<body>
-</body>
+<body></body>
 
 <template name="page">
   <div class="ui menu">
-    {{#unless isLoginPage}}
-      <a class="item" href="/">Join</a>
-      <a class="item" href="./choose-restaurant">Choose Restaurant</a>
-      <a class="item" href="./leaderboard">Leaderboard</a>
-    {{/unless}}
+    {{#if username}}
+      <a class="item {{#if isLoginPage}}active{{/if}}" href="/">Join</a>
+      {{#unless isLoginPage}}
+        <a class="item {{#if isChoosePage}}active{{/if}}" href="./choose-restaurant">Suggest a place</a>
+        <a class="item {{#if isLeaderboardPage}}active{{/if}}" href="./leaderboard">Leaderboard</a>
+      {{/unless}}
+    {{/if}}
     <div class="right menu item">
       {{#if username}}
         Hi {{username}}!
       {{else}}
-        Hi Anonymous, please&nbsp;<a href id="register">register</a>.
+        Hi there!&nbsp;<a href id="register">What's your name?</a>
       {{/if}}
     </div>
   </div>

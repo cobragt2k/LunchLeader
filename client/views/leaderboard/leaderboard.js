@@ -12,14 +12,10 @@ Template.leaderboard.helpers({
 
     return ascending.reverse();
   }
-
 });
 
 Template.leaderboard.events({
   'click #upvote-btn': function () {
-
     Vote(this._id);
-
   }
-    
 });
