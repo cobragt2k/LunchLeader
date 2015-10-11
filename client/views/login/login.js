@@ -17,7 +17,7 @@ Template.login.events({
     });
 
     var mealSessionId = MealSessions.insert({
-      day: "10-10-2015",
+      day: moment().format("DD-MM-YYYY"),
       groupId: groupId,
       restaurantIds: []
     });
