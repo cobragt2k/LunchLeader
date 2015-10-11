@@ -3,18 +3,18 @@
   <div class="ui form">
     <div class="field">
         <div class="ui big input left icon">
-          <input type="text" id="group-input" placeholder="Group Name">
+          <input type="text" id="group-input" placeholder="Group Name" maxlength="40">
           <i class="users icon"></i>
         </div>
     </div>
     <div class="field">
         <div class="ui big input left icon">
-          <input type="text" id="username-input" placeholder="Your Name">
+          <input type="text" id="username-input" placeholder="Your Name" value="{{username}}"  maxlength="40">
           <i class="user icon"></i>
         </div>
     </div>
     <div class="field">
-      <button class="fluid ui big button" id="join-button">Join Now</button>
+      <button type="submit" class="fluid ui big button" id="join-button">Join Now</button>
     </div>
   </div>
   {{/page}}

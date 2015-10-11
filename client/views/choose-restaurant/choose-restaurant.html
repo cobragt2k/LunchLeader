@@ -2,16 +2,16 @@
   {{#page title="Choose Restaurant"}}
     <form class="ui form" id="choose-restaurant-form">
       <div class="field ui big input fluid">
-        <input id="restaurant-input" type="text" placeholder="Restaurant Name">
+        <input id="restaurant-input" type="text" placeholder="Restaurant Name, Cuisine" maxlength="40">
+        San Francisco
       </div>
       <table class="ui selectable table">
-      <tbody>
-        {{#each yelpResults}}
-          {{> yelpRestaurant}}
-        {{/each}}
-      </tbody>
-    </table>
-
+        <tbody>
+          {{#each yelpResults}}
+            {{> yelpRestaurant}}
+          {{/each}}
+        </tbody>
+      </table>
       <button class="fluid ui big button" id="add-restaurant-button">Add Restaurant</button>
     </form>
   {{/page}}
@@ -19,15 +19,11 @@
 
 <template name="yelpRestaurant">
   <tr class="yelp-result-li">
-  <td>
-    {{name}}
-  </td>
-  <td>
-    {{location.address}}
-  </td>
-  <td>
-    {{location.city}}
-  </td>
-
+    <td>
+      {{name}}
+    </td>
+    <td>
+      {{location.address}}<br>{{location.city}}
+    </td>
   </tr>
 </template>

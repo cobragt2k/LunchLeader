@@ -1,12 +1,11 @@
+var getYelpSearchText = function() {
+  return $("#restaurant-input").val();
+}
 
 var restaurantSearch = function(event, template) {
   event.preventDefault();
 
-  var restaurantName = $("#restaurant-input").val();
-
-  var yelpSearchText = $('#restaurant-input').val();
-
-  Meteor.call('getYelpSearchResults',yelpSearchText, function(err, response){
+  Meteor.call('getYelpSearchResults', getYelpSearchText(), function(err, response){
     Session.set('yelpResults', response);
     console.log(err);
   });
@@ -15,38 +14,33 @@ var restaurantSearch = function(event, template) {
 
 Vote = function vote(restaurantId) {
   var restaurant = Restaurants.findOne(restaurantId);
-  var currentUserId = Session.get("currentUserId"); 
-
+  var currentUserId = Session.get("currentUserId");
   var userIndex = _.contains(restaurant.votes, currentUserId);
 
   if(!userIndex) {
-
     restaurant.votes.push(currentUserId);
     Restaurants.update(restaurantId, restaurant);
-
   } else {
-
     console.log("Not equal -1");
   }
-
 }
 
 Template.chooseRestaurant.events({
   "click #add-restaurant-button": function(event, template) {
     restaurantSearch(event, template);
   },
-  "submit #choose-restaurant-form": function(event, template) {
+  "input #restaurant-input": function(event, template) {
     restaurantSearch(event, template);
   }
 });
 
 Template.chooseRestaurant.yelpResults = function(){
-    var results = Session.get('yelpResults')
-    if (results) {
-        return results.businesses;
-    } else {
-        return [];
-    }
+  var results = Session.get('yelpResults')
+  if (results) {
+      return results.businesses;
+  } else {
+      return [];
+  }
 };
 
 Template.chooseRestaurant.events({

@@ -1,5 +1,13 @@
+Template.login.helpers({
+  username: function() {
+    return Session.get("currentUserId");
+  }
+});
+
 Template.login.events({
-  "click #join-button": function(event, template) {
+  "submit #login-form": function(event, template) {
+    event.preventDefault();
+
     var group = $("#group-input").val();
     var username = $("#username-input").val();
 
@@ -16,7 +24,7 @@ Template.login.events({
       var groupId = Groups.insert({
         name: group,
         users: [username]
-      });  
+      });
     } else {
       findGroup.users.push(username);
       Groups.update(findGroup._id, findGroup);
