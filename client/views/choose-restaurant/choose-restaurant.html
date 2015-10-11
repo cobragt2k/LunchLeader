@@ -1,11 +1,10 @@
 <template name="chooseRestaurant">
-  {{#page title="Choose Restaurant"}}
+  {{#page title="Choose a Restaurant in San Francisco"}}
     <form class="ui form" id="choose-restaurant-form">
       <div class="field ui big input fluid">
         <input id="restaurant-input" type="text" placeholder="Restaurant Name, Cuisine" maxlength="40">
-        San Francisco
       </div>
-      <table class="ui selectable table">
+      <table class="ui padded selectable table">
         <tbody>
           {{#each yelpResults}}
             {{> yelpRestaurant}}

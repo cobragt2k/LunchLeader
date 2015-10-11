@@ -8,16 +8,11 @@ Template.leaderboard.helpers({
     console.log("restaurants", restaurants);
     var ascending = _.sortBy(restaurants, function(restaurant) {
       return restaurant.votes.length;
-    })
+    });
+
     return ascending.reverse();
   }
 
-
-   //[
-  //   {restaurant: "Osha Thai", votes: 1},
-  //   {restaurant: "Super Duper", votes: 2},
-  //   {restaurant: "Murrachi's", votes: 3}
-  // ]
 });
 
 Template.leaderboard.events({
