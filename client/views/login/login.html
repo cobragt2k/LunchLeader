@@ -1,13 +1,26 @@
 <template name="login">
   {{#page title="Join us for lunch!"}}
-    <div class="ui input">
-      <input type="text" id="group-input" placeholder="Groupdomain.com">
+  <div class="ui form">
+    <div class="field">
+        <div class="ui big input left icon">
+          <input type="text" id="group-input" placeholder="Group Name">
+          <i class="users icon"></i>
+        </div>
     </div>
-    <br>
-    <div class="ui input">
-      <input type="text" id="username-input" placeholder="Username">
+    <div class="field">
+        <div class="ui big input left icon">
+          <input type="text" id="username-input" placeholder="Your Name">
+          <i class="user icon"></i>
+        </div>
     </div>
-    <br>
-    <button class="ui large button" id="join-button">Join Now</button>
+    <div class="field">
+      <button class="fluid ui big button" id="join-button">Join Now</button>
+    </div>
+  </div>
   {{/page}}
 </template>
+
+
+
+
+

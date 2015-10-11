@@ -1,19 +1,18 @@
 <template name="chooseRestaurant">
   {{#page title="Choose Restaurant"}}
-    <form id="choose-restaurant-form">
-      <div class="ui input">
-        <input class="" id="restaurant-input" type="text" placeholder="Restaurant Name">
+    <form class="ui form" id="choose-restaurant-form">
+      <div class="field ui big input fluid">
+        <input id="restaurant-input" type="text" placeholder="Restaurant Name">
       </div>
       <table class="ui selectable table">
       <tbody>
         {{#each yelpResults}}
           {{> yelpRestaurant}}
         {{/each}}
-      
       </tbody>
     </table>
 
-      <button class="ui massive button" id="add-restaurant-button">Add Restaurant</button>
+      <button class="fluid ui big button" id="add-restaurant-button">Add Restaurant</button>
     </form>
   {{/page}}
 </template>

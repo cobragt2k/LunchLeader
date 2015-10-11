@@ -14,14 +14,15 @@
       <a class="item" href="./choose-restaurant">Choose Restaurant</a>
       <a class="item" href="./leaderboard">Leaderboard</a>
     {{/unless}}
-    <span class="item">
+    <div class="right menu item">
       {{#if username}}
         Hi {{username}}!
       {{else}}
         Hi Anonymous, please&nbsp;<a id="register">register</a>.
       {{/if}}
-    </span>
+    </div>
   </div>
+
   <div class="ui container">
     <h1>{{this.title}}</h1>
     {{> UI.contentBlock}}
