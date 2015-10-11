@@ -41,7 +41,12 @@ Template.chooseRestaurant.events({
 });
 
 Template.chooseRestaurant.yelpResults = function(){
-    return Session.get('yelpResults').businesses || "Please search...";
+    var results = Session.get('yelpResults')
+    if (results) {
+        return results.businesses;
+    } else {
+        return [];
+    }
 };
 
 Template.chooseRestaurant.events({
