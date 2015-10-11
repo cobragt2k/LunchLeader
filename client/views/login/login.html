@@ -1,6 +1,6 @@
 <template name="login">
   {{#page title="Join us for lunch!"}}
-  <div class="ui form">
+  <form id="login-form" class="ui form">
     <div class="field">
         <div class="ui big input left icon">
           <input type="text" id="group-input" placeholder="Group Name" maxlength="40">
@@ -16,7 +16,7 @@
     <div class="field">
       <button type="submit" class="fluid ui big button" id="join-button">Join Now</button>
     </div>
-  </div>
+  </form>
   {{/page}}
 </template>
 
