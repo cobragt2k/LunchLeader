@@ -19,3 +19,15 @@ Template.page.events({
   }
 
 });
+
+Template.page.helpers({
+  username: function() {
+    return Session.get("currentUserId");
+  }
+});
+
+Template.page.helpers({
+  isLoginPage: function() {
+    return Router.current().route.getName() === undefined;
+  }
+});

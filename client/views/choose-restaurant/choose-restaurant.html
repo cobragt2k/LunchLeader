@@ -4,34 +4,31 @@
       <div class="ui input">
         <input class="" id="restaurant-input" type="text" placeholder="Restaurant Name">
       </div>
-      <ul>
+      <table class="ui selectable table">
+      <tbody>
         {{#each yelpResults}}
           {{> yelpRestaurant}}
         {{/each}}
-      </ul>
+      
+      </tbody>
+    </table>
 
       <button class="ui massive button" id="add-restaurant-button">Add Restaurant</button>
     </form>
   {{/page}}
 </template>
 
-<!-- <template name="searchRestaurant">
-    <div class="ui input focus">
-  <input type="text" class="yelp-text-button" placeholder="Search...">
-</div>
-  <button class="ui primary button yelp-search-button">
-  Save
-    </button>
-    <ul>
-      {{#each yelpResults}}
-        {{> yelpRestaurant}}
-      {{/each}}
-    </ul>
-</template> -->
-
-
 <template name="yelpRestaurant">
-  <li class="yelp-result-li">
-    {{name}}{{location.address}}{{location.city}}
-  </li>
+  <tr class="yelp-result-li">
+  <td>
+    {{name}}
+  </td>
+  <td>
+    {{location.address}}
+  </td>
+  <td>
+    {{location.city}}
+  </td>
+
+  </tr>
 </template>

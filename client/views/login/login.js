@@ -3,17 +3,17 @@ Template.login.events({
     var group = $("#group-input").val();
     var username = $("#username-input").val();
 
-    var userId = Users.insert({
+    Users.insert({
       name: username,
       authenticated: false
     });
 
-    Session.set("currentUserId", userId);
+    Session.set("currentUserId", username);
 
     // If group is duplicate than join exisiting one
     var groupId = Groups.insert({
       name: group,
-      users: [userId]
+      users: [username]
     });
 
     var mealSessionId = MealSessions.insert({

@@ -9,9 +9,17 @@
 <template name="page">
   <div class="ui menu">
     <a class="item" href="/">Login</a>
-    <a class="item" href="./choose-restaurant">Choose Restaurant</a>
-    <a class="item" href="./leaderboard">Leaderboard</a>
-    <span class="item">Hi Anonymous, please&nbsp;<a id="register">register</a>.</span>
+    {{#unless isLoginPage}}
+      <a class="item" href="./choose-restaurant">Choose Restaurant</a>
+      <a class="item" href="./leaderboard">Leaderboard</a>
+    {{/unless}}
+    <span class="item">
+      {{#if username}}
+        Hi {{username}}!
+      {{else}}
+        Hi Anonymous, please&nbsp;<a id="register">register</a>.
+      {{/if}}
+    </span>
   </div>
   <div class="ui container">
     <h1>{{this.title}}</h1>
