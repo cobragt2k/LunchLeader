@@ -48,6 +48,25 @@ Template.chooseRestaurant.events({
   "click .yelp-result-li": function (event, template) {
     event.preventDefault();
 
+    if(!Session.get("currentUserId")) {
+      $('.ui.basic.modal').modal({
+        onApprove: function(){
+          console.log("approve");
+          var username = $("#register-modal-input").val();
+          if(!Users.findOne({name: username})) {
+            Users.insert({
+              name: username,
+              authenticated: false
+            });
+          }
+          Session.set("currentUserId", username);
+          return true;
+        }
+
+      }).modal("show");
+      return
+    }
+
     var restaurantId = Restaurants.insert({
       yelpData: this,
       votes: []
